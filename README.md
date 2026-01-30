@@ -15,17 +15,18 @@
 
 ## Project Overview
 
-AircraftWar-Game is a classic 2D aircraft shooting game developed in Java, featuring multiple enemy types, power-ups, and engaging gameplay mechanics. The game implements object-oriented programming principles with a focus on clean architecture and modular design.
+AircraftWar-Game is a classic 2D aircraft shooting game developed in Java, featuring multiple enemy types, power-ups, and engaging gameplay mechanics. The game implements object-oriented programming principles with a focus on clean architecture and modular design. It provides an immersive gaming experience with various difficulty levels, boss battles, and power-up systems.
 
 ## Key Features
 
-- **Multiple Enemy Types**: Mob enemies, elite enemies, and powerful boss enemies
+- **Multiple Enemy Types**: Mob enemies, elite enemies, and powerful boss enemies with unique behaviors
 - **Power-ups System**: Health supplies, firepower boosts, and super fire abilities
 - **Dynamic Shooting Strategies**: Straight, spread, and circular shooting patterns
 - **Immersive Audio**: Background music and sound effects for enhanced gameplay
 - **Multiple Backgrounds**: Variety of game backgrounds for visual diversity
 - **Score System**: Track your progress and compete for high scores
 - **Game States**: Start, pause, and game over states with appropriate transitions
+- **Modular Architecture**: Clean code structure with design patterns implementation
 
 ## Technology Stack
 
@@ -36,27 +37,34 @@ AircraftWar-Game is a classic 2D aircraft shooting game developed in Java, featu
 | Audio | Java Sound API |
 | Build Tool | IntelliJ IDEA |
 | Version Control | Git |
+| External Libraries | Apache Commons Lang 3.8.1 |
 
 ## Project Structure
 
 ```
 AircraftWar-Game/
-├── src/
-│   ├── edu/hitsz/
+├── .idea/                     # IntelliJ IDEA project configuration
+│   ├── inspectionProfiles/    # Code inspection profiles
+│   └── ...                    # IDE configuration files
+├── lib/                       # External libraries
+│   └── commons-lang3-3.8.1.jar # Apache Commons Lang library
+├── src/                       # Source code
+│   ├── edu/hitsz/             # Main package
 │   │   ├── aircraft/          # Aircraft classes hierarchy
 │   │   ├── application/       # Main game application
 │   │   ├── basic/             # Basic game objects
 │   │   ├── bullet/            # Bullet classes
 │   │   ├── factory/           # Factory patterns for enemies and supplies
+│   │   │   ├── enemy_factory/ # Enemy aircraft factories
+│   │   │   └── supply_factory/ # Power-up supply factories
 │   │   ├── music/             # Audio controllers
 │   │   ├── strategy/          # Shooting strategies
 │   │   └── supply/            # Power-up supplies
 │   ├── images/                # Game graphics
 │   └── videos/                # Audio files
-├── uml/                       # UML diagrams
-├── .gitignore
-├── AircraftWar-base.iml
-└── README.md
+├── AircraftWar-base.iml       # IntelliJ IDEA module file
+├── LICENSE                    # MIT License file
+└── README.md                  # Project documentation
 ```
 
 ## Getting Started
@@ -76,7 +84,7 @@ AircraftWar-Game/
 
 2. **Open the project in IntelliJ IDEA**
    - Select "Open" and navigate to the project directory
-   - Wait for IntelliJ to index the project
+   - Wait for IntelliJ to index the project and resolve dependencies
 
 3. **Run the game**
    - Locate `Main.java` in `src/edu/hitsz/application/`
@@ -84,68 +92,88 @@ AircraftWar-Game/
 
 ## How to Play
 
-1. **Controls**:
-   - Use arrow keys to move the hero aircraft
-   - The aircraft automatically fires bullets
+### Controls
 
-2. **Gameplay**:
-   - Destroy enemy aircraft to earn points
-   - Collect power-ups to enhance your aircraft
-   - Avoid enemy bullets and collisions
-   - Defeat the boss enemy for bonus points
+- **Arrow Keys**: Move the hero aircraft in respective directions
+- **Automatic Firing**: The aircraft automatically fires bullets
 
-3. **Power-ups**:
-   - 🟢 Green: Health boost
-   - 🟡 Yellow: Firepower increase
-   - 🔵 Blue: Super fire ability
+### Gameplay
+
+1. **Objective**: Destroy enemy aircraft and survive as long as possible
+2. **Scoring**: Earn points by destroying enemy aircraft
+3. **Power-ups**: Collect falling power-ups to enhance your aircraft
+4. **Boss Battles**: Defeat powerful boss enemies for bonus points
+5. **Game Over**: The game ends when your aircraft's health reaches zero
+
+### Power-ups
+
+- **Green**: Health boost - increases your aircraft's health
+- **Yellow**: Firepower increase - enhances your bullet damage
+- **Blue**: Super fire ability - temporarily grants special shooting capabilities
 
 ## Architecture
 
 ### Design Patterns Implemented
 
-- **Factory Pattern**: For creating enemy aircraft and supplies
-- **Strategy Pattern**: For different shooting behaviors
+- **Factory Pattern**: For creating enemy aircraft and power-up supplies
+- **Strategy Pattern**: For different shooting behaviors across aircraft types
 - **Singleton Pattern**: For game managers and controllers
-- **Template Method Pattern**: For common aircraft behaviors
+- **Template Method Pattern**: For common aircraft behaviors and lifecycle
 
 ### Key Components
 
 1. **Aircraft System**
-   - `HeroAircraft`: Player-controlled aircraft
+   - `HeroAircraft`: Player-controlled aircraft with customizable attributes
    - `AbstractEnemyAircraft`: Base class for all enemy types
-   - `BossEnemy`: Powerful boss with unique abilities
+   - `BossEnemy`: Powerful boss with unique abilities and multiple health stages
+   - `EliteEnemy`: Advanced enemy with enhanced capabilities
+   - `MobEnemy`: Basic enemy with simple behavior
 
 2. **Shooting System**
    - Multiple shooting strategies for different aircraft types
    - Bullet collision detection and damage calculation
+   - Projectile management and lifecycle
 
 3. **Supply System**
    - Random supply drops from destroyed enemies
    - Temporary power-ups for the player
+   - Supply collection and effect application
 
 4. **Audio System**
    - Background music for different game states
    - Sound effects for actions and events
+   - Audio volume control and management
 
-## UML Diagrams
+5. **Game Management**
+   - Game state handling and transitions
+   - Score tracking and display
+   - Collision detection and physics
 
-The project includes comprehensive UML diagrams in the `uml/` directory:
+## Code Quality
 
-- **Class Hierarchy**: Inheritance relationships between game objects
-- **Factory Patterns**: Enemy and supply creation mechanisms
-- **Shooting Strategies**: Different shooting behavior implementations
-- **Singleton Patterns**: Game management components
+The project follows best practices for Java development:
+
+- **Clean Code**: Well-organized and readable code
+- **Modularity**: Separation of concerns into distinct packages
+- **Encapsulation**: Proper access control and information hiding
+- **Inheritance**: Hierarchical class structure for aircraft and game objects
+- **Polymorphism**: Runtime behavior variation through interfaces and abstract classes
 
 ## Contributing
 
 Contributions are welcome! Here's how you can help:
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push to the branch (`git push origin feature/AmazingFeature`)
-6. Open a Pull Request
+1. **Fork the repository** on GitHub
+2. **Create a new branch** for your feature or bug fix
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. **Make your changes** with clear commit messages
+4. **Push to the branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. **Open a Pull Request** on GitHub
 
 Please ensure your code follows the existing style and includes appropriate documentation.
 
@@ -158,6 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Java Documentation**: For comprehensive Java API references
 - **Game Development Resources**: For inspiration and best practices
 - **Open Source Community**: For valuable tools and libraries
+- **Apache Commons Lang**: For utility classes and methods
 
 ## Contact
 
@@ -166,6 +195,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ by <a href="https://github.com/GregReynaldi">Gregorius Reynaldi</a></p>
-</div>
+Built with dedication by [Gregorius Reynaldi](https://github.com/GregReynaldi)
