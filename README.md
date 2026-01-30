@@ -13,11 +13,11 @@
   </p>
 </div>
 
-## 📋 Project Overview
+## Project Overview
 
 AircraftWar-Game is a classic 2D aircraft shooting game developed in Java, featuring multiple enemy types, power-ups, and engaging gameplay mechanics. The game implements object-oriented programming principles with a focus on clean architecture and modular design.
 
-## ✨ Key Features
+## Key Features
 
 - **Multiple Enemy Types**: Mob enemies, elite enemies, and powerful boss enemies
 - **Power-ups System**: Health supplies, firepower boosts, and super fire abilities
@@ -27,7 +27,7 @@ AircraftWar-Game is a classic 2D aircraft shooting game developed in Java, featu
 - **Score System**: Track your progress and compete for high scores
 - **Game States**: Start, pause, and game over states with appropriate transitions
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Category | Technology |
 |---------|------------|
@@ -37,7 +37,7 @@ AircraftWar-Game is a classic 2D aircraft shooting game developed in Java, featu
 | Build Tool | IntelliJ IDEA |
 | Version Control | Git |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AircraftWar-Game/
@@ -59,7 +59,7 @@ AircraftWar-Game/
 └── README.md
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ AircraftWar-Game/
    - Locate `Main.java` in `src/edu/hitsz/application/`
    - Right-click and select "Run Main.main()"
 
-## 🎮 How to Play
+## How to Play
 
 1. **Controls**:
    - Use arrow keys to move the hero aircraft
@@ -99,7 +99,7 @@ AircraftWar-Game/
    - 🟡 Yellow: Firepower increase
    - 🔵 Blue: Super fire ability
 
-## 🏗️ Architecture
+## Architecture
 
 ### Design Patterns Implemented
 
@@ -127,7 +127,7 @@ AircraftWar-Game/
    - Background music for different game states
    - Sound effects for actions and events
 
-## 📊 UML Diagrams
+## UML Diagrams
 
 The project includes comprehensive UML diagrams in the `uml/` directory:
 
@@ -136,7 +136,7 @@ The project includes comprehensive UML diagrams in the `uml/` directory:
 - **Shooting Strategies**: Different shooting behavior implementations
 - **Singleton Patterns**: Game management components
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here's how you can help:
 
@@ -149,17 +149,17 @@ Contributions are welcome! Here's how you can help:
 
 Please ensure your code follows the existing style and includes appropriate documentation.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - **Java Documentation**: For comprehensive Java API references
 - **Game Development Resources**: For inspiration and best practices
 - **Open Source Community**: For valuable tools and libraries
 
-## 📞 Contact
+## Contact
 
 - **Project Link**: [https://github.com/GregReynaldi/AircraftWar-Game](https://github.com/GregReynaldi/AircraftWar-Game)
 - **Author**: [Gregorius Reynaldi](https://github.com/GregReynaldi)
